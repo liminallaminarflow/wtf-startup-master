@@ -6,23 +6,29 @@
 
 ## The following functions from the `usethis` package will be very useful for this.
 
-- usethis::use_readme_md()
-- usethis::create_project()
-- usethis::browse_github_pat()
-- usethis::use_git()
-- usethis::use_github()
-- usethis::edit_r_environ()
+library("tidyverse")
+
+
+
+
 
 #' Generate a GitHub Personal Access Token
 ## Be sure to check the scopes to allow creation of new repositories
+usethis::browse_github_pat()
 
 #' Add a GitHub Personal Access Token to your .Renviron
 ## The environment variable should be called `GITHUB_PAT`
+usethis::edit_r_environ()
 
 #' Create a new project
+usethis::create_project(here::here())
 
 #' Create a README.md in your new project
+usethis::use_readme_md()
 
 #' Commit the changes in git
+usethis::use_git(message = "testing using .Renviron vars")
 
 #' Push the project to GitHub
+usethis::use_github(protocol = "https", credentials = )
+
